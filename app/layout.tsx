@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google"
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+const montserrat = Montserrat({ weight:["500", "600"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "H3vel",
-  description: "Health, home, help",
+  title: "H3vel Coming Soon",
+  description: "H3vel Coming Soon",
 };
 
 export default function RootLayout({
@@ -15,12 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>
-        <Navbar />
-        <main className="relative overflow-hidden">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${montserrat.className} bg-lightblue`}>{children}
       </body>
     </html>
   );
